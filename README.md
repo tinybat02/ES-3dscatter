@@ -1,4 +1,4 @@
-# Simple React Panel
+# 3D Scatter
 
 This is just a stub to show how you can create a basic visualization plugin.
 
