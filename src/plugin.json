@@ -1,0 +1,21 @@
+{
+  "type": "panel",
+  "name": "3D Scatter",
+  "id": "id-3dscatter-plot-es",
+  "dataFormats": ["table"],
+  "info": {
+    "description": "3D Scatter Plot",
+    "author": {
+      "name": "Nam Le"
+    },
+    "keywords": [],
+    "screenshots": [],
+    "version": "%VERSION%",
+    "updated": "%TODAY%"
+  },
+
+  "dependencies": {
+    "grafanaVersion": "6.3.x",
+    "plugins": []
+  }
+}
