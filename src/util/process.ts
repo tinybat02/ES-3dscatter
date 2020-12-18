@@ -21,7 +21,12 @@ export const processData = (data: Array<Frame>, yStore: { [key: string]: number 
 
   Object.keys(xStore).map(store => {
     if (zStore[store] && yStore[store]) {
-      csvData.push({ Store: store, 'Area (m2)': yStore[store], Customers: zStore[store], Timespent: xStore[store] });
+      csvData.push({
+        Store: store,
+        'Area (m2)': yStore[store],
+        Customers: zStore[store],
+        'Timespent (min)': xStore[store],
+      });
       xData.push(xStore[store]);
       yData.push(yStore[store]);
       zData.push(zStore[store]);

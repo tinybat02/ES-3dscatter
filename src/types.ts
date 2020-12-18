@@ -37,5 +37,5 @@ export interface CSVRow {
   Store: string;
   'Area (m2)': number;
   Customers: number;
-  Timespent: number;
+  'Timespent (min)': number;
 }
