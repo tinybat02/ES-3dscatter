@@ -18,6 +18,7 @@
   "dependencies": {
     "plotly.js-dist": "^1.57.1",
     "react-dropzone": "^11.2.2",
-    "react-plotly.js": "^2.5.0"
+    "react-plotly.js": "^2.5.0",
+    "use-csv-downloader": "0.0.0"
   }
 }

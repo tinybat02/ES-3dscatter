@@ -1,10 +1,11 @@
-import { Frame, DataM } from '../types';
+import { Frame, CSVRow } from '../types';
 
-export const processData = (data: Array<Frame>, yStore: { [key: string]: number }): DataM[] => {
+export const processData = (data: Array<Frame>, yStore: { [key: string]: number }) => {
   const xData: number[] = [];
   const yData: number[] = [];
   const zData: number[] = [];
   const textData: string[] = [];
+  const csvData: Array<CSVRow> = [];
 
   const xStore: { [key: string]: number } = {};
   const zStore: { [key: string]: number } = {};
@@ -20,6 +21,7 @@ export const processData = (data: Array<Frame>, yStore: { [key: string]: number 
 
   Object.keys(xStore).map(store => {
     if (zStore[store] && yStore[store]) {
+      csvData.push({ Store: store, 'Area (m2)': yStore[store], Customers: zStore[store], Timespent: xStore[store] });
       xData.push(xStore[store]);
       yData.push(yStore[store]);
       zData.push(zStore[store]);
@@ -27,16 +29,19 @@ export const processData = (data: Array<Frame>, yStore: { [key: string]: number 
     }
   });
 
-  return [
-    {
-      x: xData,
-      y: yData,
-      z: zData,
-      text: textData,
-      hovertemplate: '<b>%{text}</b><br>' + '%{z} People<br>' + '%{x} min<br>' + '%{y} m2',
-      type: 'scatter3d',
-      mode: 'markers',
-      marker: { size: 5 },
-    },
-  ];
+  return {
+    result: [
+      {
+        x: xData,
+        y: yData,
+        z: zData,
+        text: textData,
+        hovertemplate: '<b>%{text}</b><br>' + '%{z} People<br>' + '%{x} min<br>' + '%{y} m2',
+        type: 'scatter3d',
+        mode: 'markers',
+        marker: { size: 5 },
+      },
+    ],
+    csvData,
+  };
 };

@@ -1,0 +1,12 @@
+.scatter3d-pane {
+  line-height: 28px;
+  color: #fff;
+  z-index: 10;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.scatter3d-pane:hover {
+  cursor: pointer;
+}
