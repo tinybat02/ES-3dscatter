@@ -5,7 +5,7 @@ import Plotly from 'plotly.js-dist';
 import createPlotlyComponent from 'react-plotly.js/factory';
 import useCsvDownloader from 'use-csv-downloader';
 import { processData } from './util/process';
-import Icon from './img/save_icon.svg';
+// import Icon from './img/save_icon.svg';
 import './css/main.css';
 
 const Plot = createPlotlyComponent(Plotly);
@@ -73,7 +73,7 @@ export class MainPanel extends PureComponent<Props, State> {
           padding: 0,
         }}
       >
-        <img className="scatter3d-pane" src={Icon} onClick={this.onDownload} />
+        {/*         <img className="scatter3d-pane" src={Icon} onClick={this.onDownload} /> */}
         <Plot
           data={data}
           layout={{
