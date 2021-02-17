@@ -91,8 +91,8 @@ export class MainPanel extends PureComponent<Props, State> {
               xaxis: { title: 'Duration' },
               yaxis: {
                 title: 'Area',
-                showticklabels: false,
-                type: 'log',
+                // showticklabels: false,
+                // type: 'log',
               },
               zaxis: { title: 'Customer' },
               camera: {
